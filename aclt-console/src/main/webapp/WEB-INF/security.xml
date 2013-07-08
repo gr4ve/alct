@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:security="http://www.springframework.org/schema/security"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans 
+          http://www.springframework.org/schema/beans/spring-beans.xsd
+          http://www.springframework.org/schema/security 
+          http://www.springframework.org/schema/security/spring-security-3.1.xsd">
+          
+	<security:http auto-config="false">
+		<security:intercept-url pattern="/service/**" access="ROLE_ADMIN,ROLE_USER" />
+		<security:form-login login-page="/login" authentication-failure-url="/login?error=true"
+			login-processing-url="/j_security_check" />
+		<security:logout logout-url="/logout" />
+		<security:session-management session-fixation-protection="newSession">
+			<security:concurrency-control max-sessions="1"
+				error-if-maximum-exceeded="false" />
+		</security:session-management>
+	</security:http>
+	
+
+
+	<security:ldap-server id="ssas"
+		url="ldap://10.136.177.16:389/dc=corp,dc=statestr,dc=com" manager-dn="CORP/e467885"
+		manager-password="!QAZxsw2" />
+
+	<security:authentication-manager>
+		<security:ldap-authentication-provider server-ref="ssas"
+			user-search-filter="(sAMAccountName={0})" group-search-base="ou=TestEMail">
+		</security:ldap-authentication-provider>
+	</security:authentication-manager>
+
+
+</beans>
