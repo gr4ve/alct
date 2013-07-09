@@ -59,6 +59,13 @@
 
 	<dependencies>
 
+		<dependency>
+			<artifactId>aclt-versionmgr</artifactId>
+			<groupId>io.aclt</groupId>
+			<version>${project.version}</version>
+
+		</dependency>
+
 		<!-- Spring Web Dependencies -->
 
 		<dependency>
@@ -261,9 +268,7 @@
 		<!-- Application settings -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-		<!-- Framework dependency versions -->
-		<spring.version>3.2.3.RELEASE</spring.version>
-		<spring.security.version>3.1.4.RELEASE</spring.security.version>
+
 
 		<!-- Database settings, also defined in src/main/jdbc.properties for easy 
 			IDE testing -->
