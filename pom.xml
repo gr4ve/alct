@@ -17,6 +17,7 @@
 		<!-- Framework dependency versions -->
 		<spring.version>3.2.3.RELEASE</spring.version>
 		<spring.security.version>3.1.4.RELEASE</spring.security.version>
+		<aspectj.version>1.7.3</aspectj.version>
 	</properties>
 
 	<build>
@@ -57,12 +58,6 @@
 			<artifactId>junit</artifactId>
 			<version>4.11</version>
 			<scope>test</scope>
-			<exclusions>
-				<exclusion>
-					<artifactId>hamcrest-core</artifactId>
-					<groupId>org.hamcrest</groupId>
-				</exclusion>
-			</exclusions>
 		</dependency>
 	</dependencies>
 
