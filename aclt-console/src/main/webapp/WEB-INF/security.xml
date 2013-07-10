@@ -21,8 +21,8 @@
 
 
 	<security:ldap-server id="ssas"
-		url="ldap://10.136.177.16:389/dc=corp,dc=statestr,dc=com" manager-dn="CORP/e467885"
-		manager-password="!QAZxsw2" />
+		url="ldap://192.136.177.16:389/dc=cxrp,dc=str,dc=com" manager-dn="${user}"
+		manager-password="${password}" />
 
 	<security:authentication-manager>
 		<security:ldap-authentication-provider server-ref="ssas"
