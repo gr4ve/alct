@@ -9,7 +9,7 @@ import org.hibernate.criterion.Projections;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-public class AppVersionDaoImpl implements AppVersionDao {
+public class AppVersionDaoImpl extends AbstractHibernateDao<AppVersion> implements AppVersionDao {
 
 	private SessionFactory sessionFactory;
 
